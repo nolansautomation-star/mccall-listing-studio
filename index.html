@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>McCall Listing Studio | Listing Marketing for Real Estate Agents</title>
+  <meta name="description" content="McCall Listing Studio writes and designs marketing packages for real estate agents' home listings. Based in Grand Rapids, Michigan.">
+  <meta name="theme-color" content="#0F2744">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%230F2744'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-size='30' fill='%23C17F3E'%3EM%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --navy: #0F2744;
+      --navy-deep: #0A1B30;
+      --cream: #F6F1E8;
+      --white: #FFFFFF;
+      --copper: #C17F3E;
+      --copper-dark: #A4682F;
+      --ink: #1C2A3A;
+      --muted: #5A6A7A;
+      --line: #E4DDD0;
+      --card: #FFFFFF;
+      --shadow: 0 8px 24px rgba(15, 39, 68, 0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+      font-size: 1.0625rem;
+    }
+
+    a { color: var(--copper-dark); }
+
+    a:hover { color: var(--navy); }
+
+    img, svg { display: block; }
+
+    .wrap {
+      width: min(1080px, calc(100% - 2.5rem));
+      margin-inline: auto;
+    }
+
+    header {
+      background: var(--navy);
+      color: var(--cream);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(193, 127, 62, 0.35);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 4.25rem;
+      flex-wrap: wrap;
+      padding-block: 0.65rem;
+    }
+
+    .brand {
+      color: var(--cream);
+      text-decoration: none;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 1.15rem;
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .brand:hover { color: var(--cream); }
+
+    .mark {
+      width: 2rem;
+      height: 2rem;
+      border: 1px solid var(--copper);
+      color: var(--copper);
+      display: grid;
+      place-items: center;
+      font-size: 0.95rem;
+      flex: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.35rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--copper);
+    }
+
+    .hero {
+      background: var(--navy);
+      color: var(--cream);
+      padding: 4.5rem 0 5rem;
+    }
+
+    .eyebrow {
+      color: var(--copper);
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--navy);
+    }
+
+    h1 {
+      color: var(--white);
+      font-size: clamp(2rem, 4.5vw, 3.35rem);
+      max-width: 14ch;
+      margin-bottom: 1.25rem;
+    }
+
+    .lead {
+      max-width: 38rem;
+      font-size: 1.15rem;
+      color: #D9E0E8;
+      margin-bottom: 2rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 0.8rem 1.35rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      border: 1px solid transparent;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn-primary {
+      background: var(--copper);
+      color: var(--navy-deep);
+      font-weight: 600;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background: #D0924E;
+      color: var(--navy-deep);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--cream);
+      border-color: rgba(246, 241, 232, 0.4);
+    }
+
+    .btn-ghost:hover,
+    .btn-ghost:focus-visible {
+      border-color: var(--copper);
+      color: var(--cream);
+    }
+
+    section { padding: 4.25rem 0; }
+
+    h2 {
+      font-size: clamp(1.7rem, 3vw, 2.2rem);
+      margin-bottom: 0.75rem;
+    }
+
+    .rule {
+      width: 3rem;
+      height: 2px;
+      background: var(--copper);
+      margin: 0 0 1.5rem;
+      border: 0;
+    }
+
+    .intro {
+      max-width: 40rem;
+      color: var(--muted);
+      margin-bottom: 2.25rem;
+    }
+
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.15rem;
+    }
+
+    .item {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 1.4rem 1.35rem 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .item h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .item p { color: var(--muted); font-size: 0.98rem; }
+
+    .how { background: var(--white); }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .step-num {
+      color: var(--copper);
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .note {
+      background: var(--cream);
+      border-left: 3px solid var(--copper);
+      padding: 1rem 1.15rem;
+      color: var(--ink);
+      max-width: 44rem;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .price-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 2rem 1.6rem 1.75rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-card.featured {
+      border-color: var(--copper);
+      background: var(--navy);
+      color: var(--cream);
+    }
+
+    .price-card.featured h3,
+    .price-card.featured .amount {
+      color: var(--white);
+    }
+
+    .price-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .amount {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 2.6rem;
+      line-height: 1;
+      color: var(--navy);
+    }
+
+    .amount span {
+      font-size: 1rem;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      color: var(--muted);
+      margin-left: 0.25rem;
+    }
+
+    .price-card.featured .amount span { color: #C9D3DE; }
+
+    .offer {
+      margin-top: 0.25rem;
+      padding: 1rem 1.15rem;
+      border: 1px dashed var(--copper);
+      background: #FBF7F1;
+      color: var(--ink);
+    }
+
+    .billing {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .contact {
+      background: var(--navy);
+      color: var(--cream);
+      text-align: center;
+    }
+
+    .contact h2 { color: var(--white); }
+
+    .contact .rule { margin-inline: auto; }
+
+    .contact p {
+      max-width: 34rem;
+      margin: 0 auto 1.5rem;
+      color: #D9E0E8;
+    }
+
+    .contact a.email {
+      color: var(--cream);
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .contact a.email:hover { color: var(--copper); }
+
+    footer {
+      background: var(--navy-deep);
+      color: #9AA7B5;
+      padding: 1.6rem 0;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    footer p + p { margin-top: 0.35rem; }
+
+    @media (max-width: 600px) {
+      .wrap { width: min(1080px, calc(100% - 1.75rem)); }
+      .hero { padding: 3rem 0 3.5rem; }
+      section { padding: 3.1rem 0; }
+      .nav-links { gap: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">
+        <span class="mark" aria-hidden="true">M</span>
+        McCall Listing Studio
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="#package">The package</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Grand Rapids, Michigan</p>
+        <h1>Marketing packages for real estate listings</h1>
+        <p class="lead">McCall Listing Studio writes and designs marketing packages for real estate agents' home listings. Send your listing details and photos, and get back a complete package ready to review.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#pricing">See pricing</a>
+          <a class="btn btn-ghost" href="mailto:nolansautomation@gmail.com">Email Nolan McCall</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="package">
+      <div class="wrap">
+        <h2>What's in each package</h2>
+        <hr class="rule">
+        <p class="intro">Every listing package includes the copy and layouts needed to market the home, written from the details the agent provides.</p>
+        <div class="packages">
+          <article class="item">
+            <h3>MLS listing description</h3>
+            <p>Long and short versions, plus headline options.</p>
+          </article>
+          <article class="item">
+            <h3>Social posts</h3>
+            <p>Instagram, Facebook, and LinkedIn posts for Just Listed, Open House, Under Contract, and Just Sold.</p>
+          </article>
+          <article class="item">
+            <h3>Reel / TikTok script</h3>
+            <p>A 30–45 second walkthrough script with a shot list.</p>
+          </article>
+          <article class="item">
+            <h3>Email blast</h3>
+            <p>Copy for an email to the agent's list.</p>
+          </article>
+          <article class="item">
+            <h3>One-page flyer</h3>
+            <p>A flyer layout with copy. A Canva-designed flyer is included with the $179 package.</p>
+          </article>
+          <article class="item">
+            <h3>Fact checklist</h3>
+            <p>So every detail matches what the agent provided.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="how">
+      <div class="wrap">
+        <h2>How it works</h2>
+        <hr class="rule">
+        <div class="steps">
+          <article>
+            <p class="step-num">01</p>
+            <h3>Send listing details and photos</h3>
+            <p>The agent sends the listing details and photos for the home.</p>
+          </article>
+          <article>
+            <p class="step-num">02</p>
+            <h3>Get a complete package back</h3>
+            <p>The agent gets back a complete, ready-to-review marketing package.</p>
+          </article>
+        </div>
+        <p class="note">Copy follows Fair Housing guidelines and uses only facts the agent provides.</p>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="wrap">
+        <h2>Pricing</h2>
+        <hr class="rule">
+        <p class="billing">Billed per listing by invoice.</p>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Written package</h3>
+            <p class="amount">$99<span>per listing</span></p>
+          </article>
+          <article class="price-card featured">
+            <h3>Written package + Canva-designed flyer</h3>
+            <p class="amount">$179<span>per listing</span></p>
+          </article>
+        </div>
+        <p class="offer">First listing free for a limited number of new agents.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <h2>Get in touch</h2>
+        <hr class="rule">
+        <p>McCall Listing Studio is owned by Nolan McCall and based in Grand Rapids, Michigan. Email to ask a question or send a listing.</p>
+        <a class="email" href="mailto:nolansautomation@gmail.com">nolansautomation@gmail.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>Payments are handled securely through Stripe invoices.</p>
+      <p>&copy; 2026 McCall Listing Studio</p>
+    </div>
+  </footer>
+</body>
+</html>
